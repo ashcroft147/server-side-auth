@@ -1,0 +1,28 @@
+{
+  "name": "server-side-auth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashcroft147/server-side-auth.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashcroft147/server-side-auth/issues"
+  },
+  "homepage": "https://github.com/ashcroft147/server-side-auth#readme",
+  "dependencies": {
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.17.2",
+    "express": "^4.15.3",
+    "mongoose": "^4.10.7",
+    "morgan": "^1.8.2",
+    "nodemon": "^1.11.0"
+  }
+}
