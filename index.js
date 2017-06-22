@@ -12,6 +12,12 @@ const mongoose = require('mongoose');
 
 // DB Setup
 mongoose.connect('mongodb://localhost:auth/auth');
+const conn = mongoose.connection;
+
+conn.once('open', function ()
+{
+    console.log('test');
+});
 
 // App Setup
 // app.user(): registers as middleware
@@ -22,6 +28,7 @@ router(app);
 // Server Setup
 const port = process.env.PORT || 3090;
 
+console.log("test");
 // http: native node lib which is working with very low level http incoming
 const server = http.createServer(app); 
 server.listen(port);

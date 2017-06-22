@@ -13,11 +13,12 @@ const userSchema = new Schema({
 userSchema.pre('save', (next) => {
     // get access to the user model
     const user = this;
-
     // generate a salt then run callback
     bcrypt.genSalt(10, (err, salt) => {
         if(err) { return next(err); }
 
+        console.log(user.email);
+        console.log(user.password);
         // hash(encrypt) our password using the salt
         bcrypt.hash(user.password, salt, null, (err, hash) => {
             if(err) {
@@ -32,7 +33,9 @@ userSchema.pre('save', (next) => {
 });
 
 // Create the model class
-const ModelClass = mongoose.model('user', userSchema)
+const User = mongoose.model('User', userSchema)
 
+
+// test
 // Export the model
-module.exports = ModelClass;
+module.exports = User;

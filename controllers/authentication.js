@@ -1,7 +1,6 @@
 const User = require('../models/user');
 
-exports.signup = (req, res, next) => {
-    console.log(req.body);
+exports.signup = (req, res, next) => {   
     const email = req.body.email;
     const password = req.body.password;
     
@@ -26,13 +25,13 @@ exports.signup = (req, res, next) => {
             password: password
         });
 
+        console.log("hey");
+
         user.save((err) => {
             if(err) { return next(err);}
+            
             // Respond to request indicating the user was created        
-
             res.json({success: true});
         });
-
-
     })
 }
