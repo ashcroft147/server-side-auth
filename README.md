@@ -5,6 +5,12 @@
 Robomongo
 
 ## bcrypt process
+- sign up
+- sign in 
+1. get Salt
+2. hash with submitted password by request and get hashed password 
+3. compare generated hashed password with the db hashed password
+
 ![bcrypt](./bcrypt_process.png)
 
 ## Tech Stack
