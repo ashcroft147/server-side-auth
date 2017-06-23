@@ -16,9 +16,7 @@ userSchema.pre('save', (next) => {
     // generate a salt then run callback
     bcrypt.genSalt(10, (err, salt) => {
         if(err) { return next(err); }
-
-        console.log(user.email);
-        console.log(user.password);
+        
         // hash(encrypt) our password using the salt
         bcrypt.hash(user.password, salt, null, (err, hash) => {
             if(err) {

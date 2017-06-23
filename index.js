@@ -16,7 +16,7 @@ const conn = mongoose.connection;
 
 conn.once('open', function ()
 {
-    console.log('test');
+    console.log('mongodb connection is successful');
 });
 
 // App Setup
@@ -28,7 +28,6 @@ router(app);
 // Server Setup
 const port = process.env.PORT || 3090;
 
-console.log("test");
 // http: native node lib which is working with very low level http incoming
 const server = http.createServer(app); 
 server.listen(port);
