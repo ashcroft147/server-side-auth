@@ -4,15 +4,15 @@ const bcrypt = require('bcrypt-nodejs');
 
 // Define our model
 const userSchema = new Schema({
-    email: { type: String, unique: true, lowercase: true },
+    email: String,
     password: String
 });
 
 // On Save Hook, encrypt password
 // Before saving a model, run this function
-userSchema.pre('save', (next) => {
+userSchema.pre('save', function(next) {
     // get access to the user model
-    const user = this;
+    const user = this; // user.email, user.password
     // generate a salt then run callback
     bcrypt.genSalt(10, (err, salt) => {
         if(err) { return next(err); }

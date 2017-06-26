@@ -11,7 +11,8 @@ const router = require('./router');
 const mongoose = require('mongoose');
 
 // DB Setup
-mongoose.connect('mongodb://localhost:auth/auth');
+mongoose.Promise = require('bluebird');
+mongoose.connect('mongodb://localhost:auth/auth', {server: { poolSize: 5 }});
 const conn = mongoose.connection;
 
 conn.once('open', function ()

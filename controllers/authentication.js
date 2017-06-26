@@ -21,7 +21,7 @@ exports.signup = (req, res, next) => {
     if(!email || !password) {
         return res.status(422).send({error: 'you must provide email and password'})
     }
-    User.getMethod
+    
     // See if a user with the given email exists
     User.findOne({email: email}, (err, existingUser) => {
         if(err) {
@@ -38,6 +38,8 @@ exports.signup = (req, res, next) => {
             email: email,
             password: password
         });
+
+        console.log(user.email);
 
         user.save((err) => {
             if(err) { return next(err);}
